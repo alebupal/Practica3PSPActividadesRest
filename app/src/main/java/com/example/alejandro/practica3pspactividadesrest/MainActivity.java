@@ -195,6 +195,12 @@ public class MainActivity extends Activity {
             public void onClick(DialogInterface dialog, int whichButton) {
                 DeleteActividad borraractividad = new DeleteActividad();
                 borraractividad.execute(URLBASE+"actividad/"+id);
+
+                DeleteActividadGrupo borraractividadgrupo = new DeleteActividadGrupo();
+                borraractividadgrupo.execute(URLBASE+"actividadgrupo/"+id);
+
+                DeleteActividadProfesor borraractividadprofesor = new DeleteActividadProfesor();
+                borraractividadprofesor.execute(URLBASE+"actividadprofesor/"+id);
             }
         });
         alert.setNegativeButton(android.R.string.no, null);
@@ -202,6 +208,28 @@ public class MainActivity extends Activity {
         return true;
     }
     public class DeleteActividad extends AsyncTask<String,Void,String> {
+        @Override
+        protected String doInBackground(String[] params) {
+            String r = ClienteRestFul.delete(params[0]);
+            return r;
+        }
+        @Override
+        protected void onPostExecute(String r) {
+            super.onPostExecute(r);
+        }
+    }
+    public class DeleteActividadGrupo extends AsyncTask<String,Void,String> {
+        @Override
+        protected String doInBackground(String[] params) {
+            String r = ClienteRestFul.delete(params[0]);
+            return r;
+        }
+        @Override
+        protected void onPostExecute(String r) {
+            super.onPostExecute(r);
+        }
+    }
+    public class DeleteActividadProfesor extends AsyncTask<String,Void,String> {
         @Override
         protected String doInBackground(String[] params) {
             String r = ClienteRestFul.delete(params[0]);
