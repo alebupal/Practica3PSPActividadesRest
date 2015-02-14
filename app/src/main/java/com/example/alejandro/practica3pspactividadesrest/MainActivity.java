@@ -233,34 +233,68 @@ public class MainActivity extends Activity {
             public void onClick(final DialogInterface dialog, int whichButton) {
                 Actividad a = new Actividad();
                if(tipoAnadirActividad.compareToIgnoreCase("complementaria")==0){
-                    String fechaiC=btAnadirCPFecha.getText()+" "+btAnadirCPHorai.getText()+":00";
-                    String fechafC="0000-00-00 "+btAnadirCPHoraf.getText()+":00";
-                   a = new Actividad(idProfesor,
-                                   tipoAnadirActividad,
-                                   fechaiC,
-                                   fechafC,
-                                   etAnadirCPLugar.getText().toString(),
-                                   "",
-                                   etAnadirDescripcion.getText().toString(),
-                                   "alejandrobp");
-                }else if (tipoAnadirActividad.compareToIgnoreCase("extraescolar")==0){
-                   String fechaiE=btAnadirEXFechai.getText()+" "+btAnadirEXHorai.getText()+":00";
-                   String fechafE=btAnadirEXFechaf.getText()+" "+btAnadirEXHoraf.getText();
-                    a = new Actividad(idProfesor,
-                                        tipoAnadirActividad,
-                                        fechaiE,
-                                        fechafE,
-                                        etAnadirEXLugarS.getText().toString(),
-                                        etAnadirEXLugarR.getText().toString(),
-                                        etAnadirDescripcion.getText().toString(),
-                                        "alejandrobp");
-                }
+                   if(btAnadirCPFecha.getText().toString().trim().compareToIgnoreCase("")==0 ||
+                      btAnadirCPHorai.getText().toString().trim().compareToIgnoreCase("")==0 ||
+                      btAnadirCPHoraf.getText().toString().trim().compareToIgnoreCase("")==0 ||
+                      idProfesor.toString().trim().compareToIgnoreCase("")==0 ||
+                      tipoAnadirActividad.toString().trim().compareToIgnoreCase("")==0 ||
+                      etAnadirCPLugar.getText().toString().trim().compareToIgnoreCase("")==0 ||
+                      etAnadirDescripcion.getText().toString().trim().compareToIgnoreCase("")==0){
 
-                PostActividad posta = new PostActividad();
-                ParametrosPost pp = new ParametrosPost();
-                pp.url=URLBASE+"actividad";
-                pp.jsonObject=a.getJSON();
-                posta.execute(pp);
+                      Toast.makeText(MainActivity.this,getString(R.string.msgVacios),Toast.LENGTH_SHORT).show();
+
+                   }else{
+                       String fechaiC=btAnadirCPFecha.getText()+" "+btAnadirCPHorai.getText()+":00";
+                       String fechafC="0000-00-00 "+btAnadirCPHoraf.getText()+":00";
+                       a = new Actividad(idProfesor,
+                               tipoAnadirActividad,
+                               fechaiC,
+                               fechafC,
+                               etAnadirCPLugar.getText().toString(),
+                               "",
+                               etAnadirDescripcion.getText().toString(),
+                               "alejandrobp");
+                       PostActividad posta = new PostActividad();
+                       ParametrosPost pp = new ParametrosPost();
+                       pp.url=URLBASE+"actividad";
+                       pp.jsonObject=a.getJSON();
+                       posta.execute(pp);
+                   }
+
+
+               }else if (tipoAnadirActividad.compareToIgnoreCase("extraescolar")==0){
+                    if(btAnadirEXFechai.getText().toString().trim().compareToIgnoreCase("")==0 ||
+                           btAnadirEXHorai.getText().toString().trim().compareToIgnoreCase("")==0 ||
+                           btAnadirEXFechaf.getText().toString().trim().compareToIgnoreCase("")==0 ||
+                           btAnadirEXFechaf.getText().toString().trim().compareToIgnoreCase("")==0 ||
+                           idProfesor.toString().trim().compareToIgnoreCase("")==0 ||
+                           tipoAnadirActividad.toString().trim().compareToIgnoreCase("")==0 ||
+                           etAnadirEXLugarS.toString().trim().compareToIgnoreCase("")==0 ||
+                           etAnadirEXLugarR.toString().trim().compareToIgnoreCase("")==0 ||
+                           etAnadirDescripcion.toString().trim().compareToIgnoreCase("")==0) {
+
+                       Toast.makeText(MainActivity.this,getString(R.string.msgVacios),Toast.LENGTH_SHORT).show();
+
+                    }else{
+
+                        String fechaiE=btAnadirEXFechai.getText()+" "+btAnadirEXHorai.getText()+":00";
+                        String fechafE=btAnadirEXFechaf.getText()+" "+btAnadirEXFechaf.getText();
+                        a = new Actividad(idProfesor,
+                                tipoAnadirActividad,
+                                fechaiE,
+                                fechafE,
+                                etAnadirEXLugarS.getText().toString(),
+                                etAnadirEXLugarR.getText().toString(),
+                                etAnadirDescripcion.getText().toString(),
+                                "alejandrobp");
+                        PostActividad posta = new PostActividad();
+                        ParametrosPost pp = new ParametrosPost();
+                        pp.url=URLBASE+"actividad";
+                        pp.jsonObject=a.getJSON();
+                        posta.execute(pp);
+
+                    }
+                }
             }
         });
         alert.setNegativeButton(android.R.string.no, null);
@@ -565,39 +599,74 @@ public class MainActivity extends Activity {
 
         alert.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int whichButton) {
-                DeleteActividad borraractividad = new DeleteActividad();
-                borraractividad.execute(URLBASE+"actividad/"+id);
 
                 Actividad a = new Actividad();
                 if(tipoEditarActividad.compareToIgnoreCase("complementaria")==0){
-                    String fechaiC=btEditarCPFecha.getText()+" "+btAnadirCPHorai.getText()+":00";
-                    String fechafC="0000-00-00 "+btEditarCPHoraf.getText()+":00";
-                    a = new Actividad(idProfesor,
-                            tipoEditarActividad,
-                            fechaiC,
-                            fechafC,
-                            etEditarCPLugar.getText().toString(),
-                            "",
-                            etEditarDescripcion.getText().toString(),
-                            "alejandrobp");
+                    if(btEditarCPFecha.getText().toString().trim().compareToIgnoreCase("")==0 ||
+                            btEditarCPHorai.getText().toString().trim().compareToIgnoreCase("")==0 ||
+                            btEditarCPHoraf.getText().toString().trim().compareToIgnoreCase("")==0 ||
+                            idProfesor.toString().trim().compareToIgnoreCase("")==0 ||
+                            tipoEditarActividad.toString().trim().compareToIgnoreCase("")==0 ||
+                            etEditarCPLugar.getText().toString().trim().compareToIgnoreCase("")==0 ||
+                            etEditarDescripcion.getText().toString().trim().compareToIgnoreCase("")==0){
+
+                        Toast.makeText(MainActivity.this,getString(R.string.msgVacios),Toast.LENGTH_SHORT).show();
+
+                    }else {
+                        DeleteActividad borraractividad = new DeleteActividad();
+                        borraractividad.execute(URLBASE+"actividad/"+id);
+                        String fechaiC = btEditarCPFecha.getText() + " " + btEditarCPHorai.getText() + ":00";
+                        String fechafC = "0000-00-00 " + btEditarCPHoraf.getText() + ":00";
+                        a = new Actividad(idProfesor,
+                                tipoEditarActividad,
+                                fechaiC,
+                                fechafC,
+                                etEditarCPLugar.getText().toString(),
+                                "",
+                                etEditarDescripcion.getText().toString(),
+                                "alejandrobp");
+                        PostActividad posta = new PostActividad();
+                        ParametrosPost pp = new ParametrosPost();
+                        pp.url=URLBASE+"actividad";
+                        pp.jsonObject=a.getJSON();
+                        posta.execute(pp);
+                    }
                 }else if (tipoEditarActividad.compareToIgnoreCase("extraescolar")==0){
-                    String fechaiE=btEditarEXFechai.getText()+" "+btEditarEXHorai.getText()+":00";
-                    String fechafE=btEditarEXFechaf.getText()+" "+btEditarEXHoraf.getText();
-                    a = new Actividad(idProfesor,
-                            tipoEditarActividad,
-                            fechaiE,
-                            fechafE,
-                            etEditarEXLugarS.getText().toString(),
-                            etEditarEXLugarR.getText().toString(),
-                            etEditarDescripcion.getText().toString(),
-                            "alejandrobp");
+                    if(btEditarCPFecha.getText().toString().trim().compareToIgnoreCase("")==0 ||
+                            btEditarEXFechai.getText().toString().trim().compareToIgnoreCase("")==0 ||
+                            btEditarEXHorai.getText().toString().trim().compareToIgnoreCase("")==0 ||
+                            btEditarEXFechaf.toString().trim().compareToIgnoreCase("")==0 ||
+                            btEditarEXHoraf.toString().trim().compareToIgnoreCase("")==0 ||
+                            idProfesor.toString().trim().compareToIgnoreCase("")==0 ||
+                            tipoEditarActividad.toString().trim().compareToIgnoreCase("")==0 ||
+                            etEditarEXLugarS.getText().toString().trim().compareToIgnoreCase("")==0 ||
+                            etEditarEXLugarR.getText().toString().trim().compareToIgnoreCase("")==0 ||
+                            etEditarDescripcion.getText().toString().trim().compareToIgnoreCase("")==0){
+
+                        Toast.makeText(MainActivity.this,getString(R.string.msgVacios),Toast.LENGTH_SHORT).show();
+
+                    }else {
+                        DeleteActividad borraractividad = new DeleteActividad();
+                        borraractividad.execute(URLBASE+"actividad/"+id);
+                        String fechaiE = btEditarEXFechai.getText() + " " + btEditarEXHorai.getText() + ":00";
+                        String fechafE = btEditarEXFechaf.getText() + " " + btEditarEXHoraf.getText();
+                        a = new Actividad(idProfesor,
+                                tipoEditarActividad,
+                                fechaiE,
+                                fechafE,
+                                etEditarEXLugarS.getText().toString(),
+                                etEditarEXLugarR.getText().toString(),
+                                etEditarDescripcion.getText().toString(),
+                                "alejandrobp");
+                        PostActividad posta = new PostActividad();
+                        ParametrosPost pp = new ParametrosPost();
+                        pp.url=URLBASE+"actividad";
+                        pp.jsonObject=a.getJSON();
+                        posta.execute(pp);
+                    }
                 }
 
-                PostActividad posta = new PostActividad();
-                ParametrosPost pp = new ParametrosPost();
-                pp.url=URLBASE+"actividad";
-                pp.jsonObject=a.getJSON();
-                posta.execute(pp);
+
 
             }
         });
