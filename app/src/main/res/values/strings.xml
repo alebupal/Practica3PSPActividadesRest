@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Practica3PSPActividadesRest</string>
+    <string name="app_name2">Actividades</string>
+
+
+    <string name="labelAnadirProfesor">Profesor</string>
+    <string name="labelAnadirDepartamento">Departamento</string>
+    <string name="labelAnadirGrupo">Grupo</string>
+    <string name="labelAnadirDescripcion">Descripción</string>
+    <string name="labelAnadirTipo">Tipo actividad</string>
+    <string name="labelAnadirComplementaria">Complementaria</string>
+    <string name="labelAnadirExtraescolar">Extraescolar</string>
+    <string name="labelAnadirFecha">Fecha</string>
+    <string name="labelAnadirLugar">Lugar</string>
+    <string name="labelAnadirLugarRegreso">Lugar regreso</string>
+    <string name="labelAnadirLugarSalida">Lugar salida</string>
+    <string name="labelAnadirFechai">Fecha inicio</string>
+    <string name="labelAnadirFechaf">Fecha final</string>
+    <string name="labelAnadirHora">Hora</string>
+    <string name="labelAnadirHoraHasta">hasta</string>
+    <string name="btAnadir">Añadir actividad</string>
+    <string name="msgBien">Operación realizada correctamente</string>
+    <string name="msgError">Error al realizar la operación</string>
+    <string name="msgVacios">Algunos campos vacíos</string>
+
+    <string name="menuAnadir">Añadir actividad</string>
+    <string name="mEditar">Editar actividad</string>
+    <string name="mBorrar">Borrar actividad</string>
+
+    <string name="tBorrar">¿Seguro que desea borrar la actividad?</string>
+
+    <string name="title_activity_detalle">Detalle</string>
+    <string name="title_activity_splash">SplashActivity</string>
+
+</resources>

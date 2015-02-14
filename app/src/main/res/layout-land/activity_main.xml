@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <fragment
+        android:layout_width="209dp"
+        android:layout_height="wrap_content"
+        android:name="com.example.alejandro.practica3pspactividadesrest.FragmentoListView"
+        android:id="@+id/fragmentLista2"
+        tools:layout="@layout/fragment_fragmento_list_view"
+        android:layout_margin="5dp" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/alguna"
+            android:src="@drawable/selecciona"
+            />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:visibility="invisible"
+            android:id="@+id/layoutdetalle">
+
+            <fragment
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:name="com.example.alejandro.practica3pspactividadesrest.FragmentoDetalle"
+                android:id="@+id/fragmentDetalle2"
+                android:layout_gravity="right"
+                tools:layout="@layout/fragment_fragmento_detalle"
+                android:layout_margin="5dp" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>
