@@ -2,15 +2,10 @@ package com.example.alejandro.practica3pspactividadesrest;
 
 import android.app.Activity;
 import android.os.AsyncTask;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -114,7 +109,6 @@ public class Detalle extends Activity {
             super.onPostExecute(r);
             JSONTokener token = new JSONTokener(r);
 
-            Toast.makeText(Detalle.this, r, Toast.LENGTH_SHORT).show();
             try {
                 JSONArray array = new JSONArray(token);
                 for (int i = 0; i < array.length(); i++) {
@@ -147,7 +141,6 @@ public class Detalle extends Activity {
         protected void onPostExecute(String r) {
             super.onPostExecute(r);
             JSONTokener token = new JSONTokener(r);
-            Toast.makeText(Detalle.this, r, Toast.LENGTH_SHORT).show();
             try {
                 JSONObject object = new JSONObject(token);
                 pElegido = new Profesor(object);
@@ -174,7 +167,6 @@ public class Detalle extends Activity {
             super.onPostExecute(r);
             JSONTokener token = new JSONTokener(r);
 
-            Toast.makeText(Detalle.this, r, Toast.LENGTH_SHORT).show();
             try {
                 JSONArray array = new JSONArray(token);
                 for (int i = 0; i < array.length(); i++) {
@@ -204,7 +196,6 @@ public class Detalle extends Activity {
             super.onPostExecute(r);
             JSONTokener token = new JSONTokener(r);
 
-            Toast.makeText(Detalle.this, r, Toast.LENGTH_SHORT).show();
             try {
                 JSONObject object = new JSONObject(token);
                 gElegido = new Grupo(object);
