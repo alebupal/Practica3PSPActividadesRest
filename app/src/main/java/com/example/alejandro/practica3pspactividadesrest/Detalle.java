@@ -65,6 +65,7 @@ public class Detalle extends Activity {
 
 
     }
+
     public void consultarDatos(){
         idActividad = getIntent().getExtras().getString("idActividad");
         GetActividadID get= new GetActividadID();

@@ -16,7 +16,8 @@ public class Actividad implements Serializable{
     }
 
 
-    public Actividad(String idProfesor, String tipo, String fechaInicio, String fechaFinal, String lugarSalida, String lugarRegreso, String descripcion, String alumno) {
+    public Actividad(String id, String idProfesor, String tipo, String fechaInicio, String fechaFinal, String lugarSalida, String lugarRegreso, String descripcion, String alumno) {
+        this.id = id;
         this.idProfesor = idProfesor;
         this.tipo = tipo;
         this.fechaInicio = fechaInicio;

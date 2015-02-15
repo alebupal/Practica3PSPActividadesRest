@@ -1,5 +1,7 @@
 package com.example.alejandro.practica3pspactividadesrest;
 
+import android.util.Log;
+
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpDelete;
@@ -10,6 +12,7 @@ import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONObject;
+
 
 /**
  * Created by Alejandro on 21/01/2015.
@@ -54,20 +57,20 @@ public class ClienteRestFul {
             return e.toString();
         }
     }
-    public static String put(String url, JSONObject objetoJSON){
+
+    public static String put(String url, JSONObject objetoJson){
         HttpClient clienteHttp = new DefaultHttpClient();
         HttpPut put = new HttpPut(url);
         put.setHeader("content-type", "application/json");
-        try {
-            StringEntity entidad = new StringEntity(objetoJSON.toString());
+        try{
+            StringEntity entidad = new StringEntity(objetoJson.toString());
             put.setEntity(entidad);
             HttpResponse respuestaHttp = clienteHttp.execute(put);
             String respuesta = EntityUtils.toString(respuestaHttp.getEntity());
             return respuesta;
-        }catch (Exception e){
+        } catch (Exception e){
             return e.toString();
         }
-
     }
 
 }
