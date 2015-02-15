@@ -661,14 +661,6 @@ public class MainActivity extends Activity {
                     }else {
                         String fechaiC = btEditarCPFecha.getText() + " " + btEditarCPHorai.getText() + ":00";
                         String fechafC = "0000-00-00 " + btEditarCPHoraf.getText() + ":00";
-                        /*a = new Actividad(idProfesor,
-                                tipoEditarActividad,
-                                fechaiC,
-                                fechafC,
-                                etEditarCPLugar.getText().toString(),
-                                "",
-                                etEditarDescripcion.getText().toString(),
-                                "alejandrobp");*/
                         a.setId(id);
                         a.setIdProfesor(idProfesor);
                         a.setTipo(tipoEditarActividad);
@@ -698,14 +690,6 @@ public class MainActivity extends Activity {
                     }else {
                         String fechaiE = btEditarEXFechai.getText() + " " + btEditarEXHorai.getText() + ":00";
                         String fechafE = btEditarEXFechaf.getText() + " " + btEditarEXHoraf.getText()+ ":00";
-                       /* a = new Actividad(idProfesor,
-                                tipoEditarActividad,
-                                fechaiE,
-                                fechafE,
-                                etEditarEXLugarS.getText().toString(),
-                                etEditarEXLugarR.getText().toString(),
-                                etEditarDescripcion.getText().toString(),
-                                "alejandrobp");*/
                         a.setId(id);
                         a.setIdProfesor(idProfesor);
                         a.setTipo(tipoEditarActividad);
