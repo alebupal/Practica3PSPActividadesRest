@@ -502,6 +502,7 @@ public class MainActivity extends Activity {
         @Override
         protected void onPostExecute(String r) {
             super.onPostExecute(r);
+            lProfesores.clear();
             JSONTokener token = new JSONTokener(r);
             try {
                 JSONArray array = new JSONArray(token);
@@ -537,6 +538,7 @@ public class MainActivity extends Activity {
         @Override
         protected void onPostExecute(String r) {
             super.onPostExecute(r);
+            lGrupos.clear();
             JSONTokener token = new JSONTokener(r);
             try {
                 JSONArray array = new JSONArray(token);
@@ -846,6 +848,7 @@ public class MainActivity extends Activity {
         @Override
         protected void onPostExecute(String r) {
             super.onPostExecute(r);
+            lProfesores.clear();
             JSONTokener token = new JSONTokener(r);
             try {
                 JSONArray array = new JSONArray(token);
@@ -883,6 +886,7 @@ public class MainActivity extends Activity {
         @Override
         protected void onPostExecute(String r) {
             super.onPostExecute(r);
+            lGrupos.clear();
             JSONTokener token = new JSONTokener(r);
             try {
                 JSONArray array = new JSONArray(token);
@@ -920,6 +924,7 @@ public class MainActivity extends Activity {
         @Override
         protected void onPostExecute(String r) {
             super.onPostExecute(r);
+            laGrupos.clear();
             JSONTokener token = new JSONTokener(r);
             try {
                 JSONArray array = new JSONArray(token);
