@@ -671,6 +671,7 @@ public class MainActivity extends Activity {
                         a.setLugarSalida(etEditarCPLugar.getText().toString());
                         a.setLugarRegreso("");
                         a.setDescripcion( etEditarDescripcion.getText().toString());
+                        a.setAlumno("alejandrobp");
 
                         PutActividad posta = new PutActividad();
                         ParametrosPost pp = new ParametrosPost();
@@ -950,6 +951,7 @@ public class MainActivity extends Activity {
         @Override
         protected void onPostExecute(String r) {
             super.onPostExecute(r);
+            Log.v("r",r);
             r=r.substring(5,r.length()-1);
 
             Log.v("r",r+"");
